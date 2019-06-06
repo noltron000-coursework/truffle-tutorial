@@ -1,68 +1,68 @@
 App = {
-  web3Provider: null,
-  contracts: {},
+	web3Provider: null,
+	contracts: {},
 
-  init: async function() {
-    // Load pets.
-    $.getJSON('../pets.json', function(data) {
-      var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate');
+	init: async function() {
+		// Load pets.
+		$.getJSON('../pets.json', function(data) {
+			var petsRow = $('#petsRow');
+			var petTemplate = $('#petTemplate');
 
-      for (i = 0; i < data.length; i ++) {
-        petTemplate.find('.panel-title').text(data[i].name);
-        petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-age').text(data[i].age);
-        petTemplate.find('.pet-location').text(data[i].location);
-        petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
+			for (i = 0; i < data.length; i ++) {
+				petTemplate.find('.panel-title').text(data[i].name);
+				petTemplate.find('img').attr('src', data[i].picture);
+				petTemplate.find('.pet-breed').text(data[i].breed);
+				petTemplate.find('.pet-age').text(data[i].age);
+				petTemplate.find('.pet-location').text(data[i].location);
+				petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
 
-        petsRow.append(petTemplate.html());
-      }
-    });
+				petsRow.append(petTemplate.html());
+			}
+		});
 
-    return await App.initWeb3();
-  },
+		return await App.initWeb3();
+	},
 
-  initWeb3: async function() {
-    /*
-     * Replace me...
-     */
+	initWeb3: async function() {
+		/*
+		* Replace me...
+		*/
 
-    return App.initContract();
-  },
+		return App.initContract();
+	},
 
-  initContract: function() {
-    /*
-     * Replace me...
-     */
+	initContract: function() {
+		/*
+		* Replace me...
+		*/
 
-    return App.bindEvents();
-  },
+		return App.bindEvents();
+	},
 
-  bindEvents: function() {
-    $(document).on('click', '.btn-adopt', App.handleAdopt);
-  },
+	bindEvents: function() {
+		$(document).on('click', '.btn-adopt', App.handleAdopt);
+	},
 
-  markAdopted: function(adopters, account) {
-    /*
-     * Replace me...
-     */
-  },
+	markAdopted: function(adopters, account) {
+		/*
+		* Replace me...
+		*/
+	},
 
-  handleAdopt: function(event) {
-    event.preventDefault();
+	handleAdopt: function(event) {
+		event.preventDefault();
 
-    var petId = parseInt($(event.target).data('id'));
+		var petId = parseInt($(event.target).data('id'));
 
-    /*
-     * Replace me...
-     */
-  }
+		/*
+		* Replace me...
+		*/
+	}
 
 };
 
 $(function() {
-  $(window).load(function() {
-    App.init();
-  });
+	$(window).load(function() {
+		App.init();
+	});
 });
